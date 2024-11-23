@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Seeds</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        body, h1, p, ul, li, a, input, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        /* Search Section */
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #searchBox {
+            padding: 10px;
+            width: 60%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Note Section */
+        .note {
+            font-size: 1rem;
+            background-color: #fffae6;
+            padding: 10px 15px;
+            border-left: 5px solid #ffc107;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        /* Seed List */
+        .seed-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .seed-list li {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .seed-list li a {
+            color: #4CAF50;
+            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .seed-list li a:hover {
+            text-decoration: underline;
+        }
+
+        .seed-list li p {
+            margin: 10px 0;
+        }
+
+        /* Back Link */
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .back-link a:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Seed Database</h1>
+    </header>
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="Search for a seed...">
+            <button onclick="searchItem()">Search</button>
+        </div>
+        <p class="note">
+            <strong>Note:</strong> Enter the name of a seed you want to explore. For example: cabbage, carrot, french bean, or bottle gourd.
+        </p>
+        <ul class="seed-list">
+            <li><a href="#tomato" id="tomato">Tomato</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> High-yielding tomato variety, resistant to many common diseases.</p>
+                <p><strong>Growing Instructions:</strong> Plant in well-drained soil with full sun. Space plants 18 inches apart.</p>
+            </li>
+            <li><a href="#lettuce" id="lettuce">Lettuce</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Best grown in cold climate.</p>
+                <p><strong>Growing Instructions:</strong> Plant in early spring or fall, in well-drained soil with full sun to partial shade. Space 6-12 inches apart.</p>
+            </li>
+            <li><a href="#sunflower" id="sunflower">Sunflower</a>
+                <p><strong>Category:</strong> Flower</p>
+                <p><strong>Description:</strong> Giant sunflowers with large, edible seeds. Great for attracting pollinators.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun. Space seeds 12 inches apart. Can grow up to 12 feet tall, so ensure ample space.</p>
+            </li>
+            <li><a href="#basil_genovese" id="basil_genovese">Basil 'Genovese'</a>
+                <p><strong>Category:</strong> Herb</p>
+                <p><strong>Description:</strong> Classic Italian basil used in pesto and other dishes. Thrives in warm weather and full sun.</p>
+                <p><strong>Growing Instructions:</strong> Plant after frost has passed. Requires full sun and well-drained soil. Space 12 inches apart.</p>
+            </li>
+            <li><a href="#carrot" id="carrot">Carrot</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Sweet, orange carrots. Ideal for cooler regions.</p>
+                <p><strong>Growing Instructions:</strong> Plant in loose, well-drained soil. Space 2-4 inches apart.</p>
+            </li>
+            <li><a href="#cucumber" id="cucumber">Cucumber</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Crisp, dark green cucumbers perfect for fresh eating or pickling.</p>
+                <p><strong>Growing Instructions:</strong> Plant after the last frost. Space 12 inches apart. Provide a trellis for vertical growth if needed.</p>
+            </li>
+            <li><a href="#peas" id="peas">Peas</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Sweet and crunchy snap peas, great for fresh eating or stir-fries.</p>
+                <p><strong>Growing Instructions:</strong> Plant early in spring. Space 2 inches apart. Provide a trellis for support.</p>
+            </li>
+            <li><a href="#spinach" id="spinach">Spinach</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Heirloom spinach with dark green, tender leaves. Cold-tolerant and great for early spring or fall planting.</p>
+                <p><strong>Growing Instructions:</strong> Plant early spring or late summer in full sun to partial shade. Space 4-6 inches apart.</p>
+            </li>
+            <li><a href="#zucchini" id="zucchini">Zucchini</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Dark green zucchini perfect for grilling, baking, or stir-fries.</p>
+                <p><strong>Growing Instructions:</strong> Plant after the last frost in full sun. Space 18-24 inches apart.</p>
+            </li>
+            <li><a href="#cabbage" id="cabbage">Cabbage</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Compact red cabbage with crunchy texture, perfect for slaws and salads.</p>
+                <p><strong>Growing Instructions:</strong> Plant in early spring in well-drained soil. Space 12-18 inches apart.</p>
+            </li>
+            <li><a href="#sweet_pepper" id="sweet_pepper">Sweet Pepper 'California Wonder'</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Sweet bell peppers, great for salads, grilling, and stuffing.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun. Space plants 18-24 inches apart.</p>
+            </li>
+            <li><a href="#radish_cherry_belle" id="radish_cherry_belle">Radish 'Cherry Belle'</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Fast-growing, crunchy radishes with a mild flavor.</p>
+                <p><strong>Growing Instructions:</strong> Plant directly in the soil early in the spring or fall. Space 1 inch apart.</p>
+            </li>
+            <li><a href="#kale" id="kale">Kale</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Tender and nutritious kale, perfect for smoothies, soups, or salads.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun to partial shade. Space 12 inches apart.</p>
+            </li>
+            <li><a href="#pumpkin" id="pumpkin">Pumpkin</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Small, sweet pumpkins perfect for pies and baking.</p>
+                <p><strong>Growing Instructions:</strong> Plant after frost in full sun. Space plants 24-36 inches apart.</p>
+            </li>
+            <li><a href="#arugula" id="arugula">Arugula</a>
+                <p><strong>Category:</strong> Herb</p>
+                <p><strong>Description:</strong> Peppery, flavorful leaves perfect for salads.</p>
+                <p><strong>Growing Instructions:</strong> Plant in cool weather, in full sun to partial shade. Space 4-6 inches apart.</p>
+            </li>
+            <li><a href="#chard" id="chard">Chard</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Colorful stems with dark, flavorful leaves. Great in soups and salads.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun. Space plants 12 inches apart.</p>
+            </li>
+            <li><a href="#thyme" id="thyme">Thyme</a>
+                <p><strong>Category:</strong> Herb</p>
+                <p><strong>Description:</strong> Fragrant and flavorful herb perfect for cooking.</p>
+                <p><strong>Growing Instructions:</strong> Plant in well-drained soil in full sun. Space plants 6-12 inches apart.</p>
+            </li>
+            <li><a href="#chives_garlic" id="chives_garlic">Chives 'Garlic'</a>
+                <p><strong>Category:</strong> Herb</p>
+                <p><strong>Description:</strong> Mild garlic flavor, great for culinary use in salads and garnishes.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun in well-drained soil. Space plants 6-8 inches apart.</p>
+            </li>
+            <li><a href="#brinjal" id="brinjal">Brinjal</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Long, cylindrical, dark purple eggplant. Best suited for warm climates.</p>
+                <p><strong>Growing Instructions:</strong> Plant after the last frost. Space plants 18 inches apart. Requires well-drained, fertile soil.</p>
+            </li>
+            <li><a href="#okra" id="okra">Okra</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Smooth, tender pods. Popular in Indian cuisine.</p>
+                <p><strong>Growing Instructions:</strong> Plant in well-drained soil with full sun. Space 12 inches apart.</p>
+            </li>
+            <li><a href="#cabbage_pusa_drumshead" id="cabbage_pusa_drumshead">Cabbage 'Pusa Drumhead'</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Early-maturing cabbage variety with large, compact heads.</p>
+                <p><strong>Growing Instructions:</strong> Plant in fertile, well-drained soil. Space plants 18-24 inches apart.</p>
+            </li>
+            <li><a href="#spinach_pusa_harit" id="spinach_pusa_harit">Spinach 'Pusa Harit'</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Cold-tolerant spinach with dark, tender leaves.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun or partial shade. Space plants 6 inches apart.</p>
+            </li>
+            <li><a href="#chili" id="chili">Chili</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Spicy chili peppers, ideal for adding heat to dishes.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun. Space plants 18 inches apart. Provide support if needed.</p>
+            </li>
+            <li><a href="#bottle_gourd" id="bottle_gourd">Bottle Gourd</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Long, green gourds. Perfect for soups and stews.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun in fertile, well-drained soil. Space plants 3 feet apart.</p>
+            </li>
+            <li><a href="#french_bean" id="french_bean">French Bean</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Delicate beans perfect for fresh eating or cooking.</p>
+                <p><strong>Growing Instructions:</strong> Plant in well-drained soil in full sun. Space 2-4 inches apart.</p>
+            </li>
+            <li><a href="#onion" id="onion">Onion</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Red onions, great for salads and cooking.</p>
+                <p><strong>Growing Instructions:</strong> Plant in full sun with well-drained soil. Space plants 12 inches apart.</p>
+            </li>
+            <li><a href="#mustard" id="mustard">Mustard</a>
+                <p><strong>Category:</strong> Vegetable</p>
+                <p><strong>Description:</strong> Excellent variety for oil and greens.</p>
+                <p><strong>Growing Instructions:</strong> Plant in well-drained soil with full sun. Space 6-12 inches apart. </p>
+            </li>
+            <li><a href="#fenugreek" id="fenugreek">Fenugreek</a>
+                <p><strong>Category:</strong>Herb</p>
+                <p><strong>Description:</strong> Used in Indian cuisine for its flavor.</p>
+                <p><strong>Growing Instructions:</strong>Plant in full sun with well-drained soil. Space 6-8 inches apart.</p>
+            </li>
+            <li><a href="#corriander" id="corriander">Corriander</a>
+                <p><strong>Category:</strong>Herb</p>
+                <p><strong>Description:</strong>Fresh leaves used in chutneys, garnishes, and dishes.</p>
+                <p><strong>Growing Instructions:</strong>Plant in well-drained soil with full sun. Space 6-12 inches apart.</p>
+            </li>
+            <li><a href="#mint" id="mint">Mint</a>
+                <p><strong>Category:</strong>Herb</p>
+                <p><strong>Description:</strong> Aromatic herb, widely used in Indian dishes and beverages.</p>
+                <p><strong>Growing Instructions:</strong>Plant in full sun to partial shade. Space plants 6-12 inches apart.</p>
+            </li>
+            <li><a href="#tulsi" id="tulsi">Tulsi</a>
+                <p><strong>Category:</strong> Herb</p>
+                <p><strong>Description:</strong> Tulsi, also known as Holy Basil, is a sacred herb in Indian culture, renowned for its medicinal properties. It has aromatic leaves and is used in traditional medicine and religious practices.</p>
+                <p><strong>Growing Instructions:</strong> Plant in well-drained, fertile soil with full sunlight. Water regularly but avoid overwatering. Space plants 12–18 inches apart. Tulsi thrives in warm climates but can grow indoors with sufficient light.</p>
+            </li>
+            
+            <li><a href="#aloevera" id="aloevera">Aloe Vera</a>
+                <p><strong>Category:</strong> Herb</p>
+                <p><strong>Description:</strong> Aloe Vera is a hardy, drought-resistant plant known for its thick, fleshy leaves filled with a gel used in skincare, medicine, and health products.</p>
+                <p><strong>Growing Instructions:</strong> Plant in sandy, well-drained soil and place in bright, indirect sunlight. Water sparingly, allowing the soil to dry out between watering. Aloe Vera is low-maintenance and grows well in pots or outdoor gardens in warm climates.</p>
+            </li>
+            
+            <li><a href="#moneyplant" id="moneyplant">Money Plant</a>
+                <p><strong>Category:</strong> Indoor Plant/Vine</p>
+                <p><strong>Description:</strong> A popular decorative plant with heart-shaped leaves, known for its air-purifying qualities and low maintenance needs. Believed to bring good fortune and positive energy.</p>
+                <p><strong>Growing Instructions:</strong> Plant in well-draining soil or grow in water. Place in bright, indirect sunlight but avoid direct exposure. Water when the soil feels dry, and prune as needed to control growth. Money plants thrive in a range of environments, including indoors.</p>
+            </li>
+            
+        </ul>
+        <div class="back-link">
+            <a href="index.html">Back to Main Page</a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Seed Database</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
